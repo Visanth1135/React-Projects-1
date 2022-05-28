@@ -1,16 +1,23 @@
-import React, { useState } from "react";
-import {Button} from 'react-bootstrap'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React,{useState} from "react";
+
+
+import Popup from "./popup";
+import './style.css'
 
 
 export default function App() {
-
+const [trigger, setTrigger] = useState(false)
 
   return (
-  <div className="col-sm-4 d-grid gap-2">
-  <button type="button" class="btn btn-primary">Left</button>
-  <button type="button" class="btn btn-primary">Middle</button>
-  <button type="button" class="btn btn-primary">Right</button>
+    <div className="App">
+    <main>
+      <h1>React Popups</h1>
+      <br/> <br/>
+      <button onClick={()=>setTrigger(true)} >Open Popup</button>
+       <Popup modal={setTrigger}>
+         <h3>My popup</h3>
+      </Popup>
+    </main>
   </div>
 
   )
