@@ -14,9 +14,7 @@ const [trigger, setTrigger] = useState(false)
       <h1>React Popups</h1>
       <br/> <br/>
       <button onClick={()=>setTrigger(true)} >Open Popup</button>
-       <Popup modal={setTrigger}>
-         <h3>My popup</h3>
-      </Popup>
+       <Popup modal={trigger} setModal = {setTrigger}/>
     </main>
   </div>
 
