@@ -2,12 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './style.css';
 import App from './App';
-import { AppProvider } from './context';
+
+import {Provider} from 'react-redux'
+import store from './store';
+
+
+// Boiler plate code for redux
 ReactDOM.render(
-  <React.StrictMode>
-    <AppProvider>
-      <App />
-    </AppProvider>
-  </React.StrictMode>,
+  <Provider store = {store}>
+  
+  <App />
+  
+  </Provider>
+    ,
   document.getElementById('root')
 );

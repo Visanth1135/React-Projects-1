@@ -409,3 +409,7 @@ Cocktail
     height: 5em;
   }
 }
+.flexi{
+  display: flex;
+  justify-content: space-between;
+}
