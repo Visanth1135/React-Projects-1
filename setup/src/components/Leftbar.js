@@ -1,15 +1,12 @@
 import { makeStyles } from '@mui/styles';
-import React from 'react'
-
-import Navbar from './components/Navbar';
 
 const useStyles = makeStyles((theme)=>({}));
 
-const App = () => {
+const Leftbar = () => {
 const classes = useStyles();
   return (
-    <div><Navbar/> </div>
+    <div>Leftbar</div>
   )
 }
 
-export default App
+export default Leftbar
