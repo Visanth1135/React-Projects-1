@@ -5,7 +5,7 @@ import { cartReducer, filterReducer } from './reducers';
 const Cart = createContext();
 faker.seed(99);
 const Context = ({children}) => {
-  const products = [...Array(20)].map(() => ({
+  const tproducts = [...Array(20)].map(() => ({
     id: faker.datatype.uuid(),
     name: faker.commerce.productName(),
     price: faker.commerce.price(),
@@ -15,8 +15,7 @@ const Context = ({children}) => {
     ratings: faker.helpers.arrayElement([1, 2, 3, 4, 5]),
   }));
   const [ filterstate, filterdispatch] = useReducer(filterReducer, {
-    prod: products,
-    transformProducts: [],
+    products: [],
   });
 
   const [state, dispatch] = useReducer(cartReducer, {
@@ -25,7 +24,7 @@ const Context = ({children}) => {
 
 
   return (
-    <Cart.Provider value={{products, state, dispatch, filterstate, filterdispatch}}>
+    <Cart.Provider value={{ tproducts, state, dispatch, filterstate, filterdispatch}}>
         {children}
     </Cart.Provider>
   )

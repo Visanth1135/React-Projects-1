@@ -3,21 +3,27 @@ import { CartState } from '../context/Context'
 import SingleProduct from './SingleProduct';
 
 const Home = () => {
-    const {filterstate:{ transformProducts },filterdispatch, products}=CartState();
-    console.log('jjj'+transformProducts)
+    const {filterstate:{ products },filterdispatch, tproducts}=CartState();
+    let prod=[]
+    if (products.length===0) {prod=tproducts}
+    else {prod=products}
+    console.log(products)
   return (
     <div>
     <div>
     <button onClick={()=>filterdispatch({
-      type:'NO_FILTER'
+      type:'NO_FILTER',
+      payload:tproducts
     })}>No filter</button>
     <button onClick={()=>filterdispatch({
-      type:'FAST_DELIVERY'
+      type:'FAST_DELIVERY',
+      payload:tproducts
     })}>Fast delivery</button>
     </div>
     <div class='flex'>
-    {products.map((prod)=>{
-      return <SingleProduct prod={prod} key = {prod.id}/>
+
+    {prod.map((p)=>{
+      return <SingleProduct p={p} key = {p.id}/>
     })}
     </div>
     </div>

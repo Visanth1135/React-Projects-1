@@ -12,12 +12,12 @@ export const cartReducer = (state, action) => {
 }
 
 export const filterReducer = (state,action)=>{
-    console.log(state)
+    console.log(action.payload)
     switch (action.type) {
         case 'NO_FILTERS':
-            
-            return {transformProducts:state.prod}
-        
+            return {products:action.payload}
+        case 'FAST_DELIVERY': 
+            return {products:action.payload.filter((p)=>p.fastDelivery==true)}
     
         default:
            return state;
