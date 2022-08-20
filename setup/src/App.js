@@ -1,12 +1,19 @@
 import React from 'react'
-import Header from './components/Header'
-import Home from './components/Home'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import Login from './pages/Login';
+import SignIn from './pages/SignIn';
+
+
 
 const App = () => {
-  return (
-    
-    <Home/>
-  )
+  return (  
+    <Router>
+    <Routes>
+    <Route exact path="/signin" element={<SignIn/>} />
+    <Route exact path="/login" element={<Login/>} />
+    </Routes>
+    </Router>
+  );
 }
 
 export default App
