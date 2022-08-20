@@ -1,0 +1,11 @@
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 10px;
+  }
+
+  .card-class{
+    margin: 10px;
+    width:20rem
+  }
