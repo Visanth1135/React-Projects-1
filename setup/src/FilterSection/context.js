@@ -1,26 +1,37 @@
-import React, { createContext, useContext, useReducer, useState } from 'react'
+import React, { createContext, useContext, useEffect, useReducer, useState } from 'react'
 import { faker } from '@faker-js/faker';
 import { filterReducer } from './reducer';
+import axios from 'axios';
+
 
 const Cart = createContext();
-faker.seed(99);
+
 const Context = ({children}) => {
-  const products = [...Array(20)].map(() => ({
-    id: faker.datatype.uuid(),
-    name: faker.commerce.productName(),
-    price: faker.commerce.price(),
-    image: faker.image.food(),
-    inStock: faker.helpers.arrayElement([0, 3, 5, 6, 7]),
-    fastDelivery: faker.datatype.boolean(),
-    ratings: faker.helpers.arrayElement([1, 2, 3, 4, 5]),
-  }));
+  const [products, setProducts] = useState([])
+  useEffect(() => {
+    const getProduct = async () => {
+      try {
+        const res = await axios.get("http://localhost:8000/products");
+        setProducts(res.data);
+      } catch {
+        console.log('error')
+      }
+    };
+    getProduct();
+  }, []);
+  const result = Object.values(products)
+  console.log(products)
+
+
   const [ filterstate, filterdispatch] = useReducer(filterReducer, {
     products: products,
+      filter:[],
+      filteredProducts:[],
   });
-
+console.log(filterstate)
 
   return (
-    <Cart.Provider value={{ products,  filterstate, filterdispatch}}>
+    <Cart.Provider value={{ filterstate, filterdispatch}}>
         {children}
     </Cart.Provider>
   )

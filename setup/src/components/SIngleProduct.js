@@ -6,19 +6,19 @@ const SingleProduct = ({p}) => {
   return (
     
       <Card className='card-class'>
-        <Card.Img variant="top" src={p.image} alt={p.name} />
+        <Card.Img variant="top" src={p.img} alt={p.name} />
         <Card.Body>
           <Card.Title>{p.name}</Card.Title>
-          <Card.Subtitle style={{ paddingBottom: 10 }}>
+          <Card.Subtitle>
             <span>₹ {p.price}</span>
             <Button
               
                
                 
               
-              disabled={!p.inStock}
+              disabled={!p.Instock}
             >
-              {!p.inStock ? "Out of Stock" : "Add to Cart"}
+              {!p.Instock ? "Out of Stock" : "Add to Cart"}
             </Button>
             </Card.Subtitle>
             </Card.Body>

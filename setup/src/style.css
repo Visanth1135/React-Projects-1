@@ -1,7 +1,8 @@
+
 .products {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
     margin: 10px;
   }
 
@@ -9,3 +10,35 @@
     margin: 10px;
     width:20rem
   }
+
+  .card-img-top{
+    height:213px
+  }
+
+  .h-100{
+    margin-left: 15px;
+    margin-top: 15px;
+  }
+
+  .cfNwtH{
+    padding-top: 10px !important;
+  }
+
+  .filter-box{
+    height: 650px;
+    border-style:solid;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+  }
+
+  .filter-box button {
+    margin:20px
+  }
+
+  .filter-box h3{
+    margin: auto;
+  }
+
+  
