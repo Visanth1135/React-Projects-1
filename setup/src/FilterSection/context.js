@@ -31,7 +31,7 @@ const Context = ({children}) => {
 console.log(filterstate)
 
   return (
-    <Cart.Provider value={{ filterstate, filterdispatch}}>
+    <Cart.Provider value={{ products,filterstate, filterdispatch}}>
         {children}
     </Cart.Provider>
   )

@@ -40,5 +40,11 @@
   .filter-box h3{
     margin: auto;
   }
+.pos{
+  position: fixed;
+  bottom: 0px;
+  z-index: 50%;
+}
+  
 
   
